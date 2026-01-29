@@ -45,6 +45,21 @@
 			path = AlNahamUITests;
 			sourceTree = "<group>";
 		};
+		95A8A0D92F2B559700A85399 /* Model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95A8A0E22F2B564B00A85399 /* views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = views;
+			sourceTree = "<group>";
+		};
+		95A8A0E62F2B568500A85399 /* ViewModels */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +90,9 @@
 		95A8A0A52F2B522400A85399 = {
 			isa = PBXGroup;
 			children = (
+				95A8A0E62F2B568500A85399 /* ViewModels */,
+				95A8A0E22F2B564B00A85399 /* views */,
+				95A8A0D92F2B559700A85399 /* Model */,
 				95A8A0B02F2B522400A85399 /* AlNaham */,
 				95A8A0BE2F2B522400A85399 /* AlNahamTests */,
 				95A8A0C82F2B522400A85399 /* AlNahamUITests */,
@@ -109,6 +127,9 @@
 			);
 			fileSystemSynchronizedGroups = (
 				95A8A0B02F2B522400A85399 /* AlNaham */,
+				95A8A0D92F2B559700A85399 /* Model */,
+				95A8A0E22F2B564B00A85399 /* views */,
+				95A8A0E62F2B568500A85399 /* ViewModels */,
 			);
 			name = AlNaham;
 			packageProductDependencies = (
