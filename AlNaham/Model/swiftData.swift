@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct UserData{
+    
+    var prograss: Int = 0
+    var user: String = ""
+    
+}
