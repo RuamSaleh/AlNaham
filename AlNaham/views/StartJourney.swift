@@ -9,7 +9,37 @@ import SwiftUI
 
 struct StartJourney: View {
     var body: some View {
-        Text("Home")
+       ZStack {
+           Image("BackGround")
+           // BACKGROUND IMAGE behiend elements
+           
+           ZStack{
+               Image("sea")
+                   .resizable()
+                   .aspectRatio(contentMode: .fit)
+                   .frame(height: 600)
+                   .padding(.top, 426)
+               
+           }
+           
+           ZStack{
+               Image("ShipPathL")
+                   .resizable()
+                   .aspectRatio(contentMode: .fit)
+                   .frame(width: 493, height: 875)
+           }
+            
+           
+           ZStack{
+               Image("ship")
+                   .resizable()
+                   .aspectRatio(contentMode: .fit)
+                   .frame(width: 321, height: 510)
+                   .padding(.trailing, -340)
+                   .padding(.top, 290)
+           }
+        }
+        
     }
 }
 
