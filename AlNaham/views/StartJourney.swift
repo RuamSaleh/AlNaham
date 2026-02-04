@@ -46,8 +46,8 @@ struct StartJourney: View {
            
            ZStack{
                VStack{
-                   Text("Start your journey")
-                       .font(.system(size: 30, weight: .bold, design: .default))
+                   Text("سَفينة السكينة")
+                       .font(.custom("waseem-light", size: 30))
                        .foregroundColor(.black)
                        //.padding(.top, 100)
                }
