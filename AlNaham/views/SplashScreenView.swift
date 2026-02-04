@@ -6,12 +6,14 @@
 
 
 import SwiftUI
+import AudioToolbox
 
 struct SplashScreenView: View {
     @State private var cloudsIn = false
     @State private var seaIn = false
     @State private var shipIn = false
     @State private var buttonIn = false
+    @State private var isMusicOn = false
     
     private let cloudWidth: CGFloat = 426
     private let seaSize = CGSize(width: 852, height: 393)
