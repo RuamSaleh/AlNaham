@@ -10,37 +10,59 @@ import SwiftUI
 struct StartJourney: View {
     var body: some View {
        ZStack {
-           Image("BackGround")
-           // BACKGROUND IMAGE behiend elements
+           Color.background
+           // BACKGROUND color behiend elements
            
            ZStack{
                Image("sea")
                    .resizable()
                    .aspectRatio(contentMode: .fit)
-                   .frame(height: 600)
-                   .padding(.top, 426)
+                   .frame(height: 560)
+                   .padding(.top, 403)
                
            }
            
+           
            ZStack{
-               Image("ShipPathL")
+               Image("ship") // First ship (Single element)
                    .resizable()
                    .aspectRatio(contentMode: .fit)
-                   .frame(width: 493, height: 875)
+                   .frame(width: 615, height: 685)
+                   .padding(.trailing, 345)
+                   .padding(.top, 340)
            }
             
            
+           
            ZStack{
-               Image("ship")
+               Image("path") // The Path (single element)
                    .resizable()
                    .aspectRatio(contentMode: .fit)
-                   .frame(width: 321, height: 510)
-                   .padding(.trailing, -340)
-                   .padding(.top, 290)
+                   .frame(width: 370, height: 846)
+                   .padding(.top, 46)
+           }
+            
+           
+           
+           ZStack{
+               VStack{
+                   Text("Start your journey")
+                       .font(.system(size: 30, weight: .bold, design: .default))
+                       .foregroundColor(.black)
+                       //.padding(.top, 100)
+               }
+               Image("ship") // Second ship (single element)
+                   .resizable()
+                   .aspectRatio(contentMode: .fit)
+                   .frame(width: 281, height: 451)
+                   .offset(x: 154, y: 161)
+                   
+                   //.padding(.top, 315) (leave for referance)
            }
         }
-        
+       
     }
+    
 }
 
 #Preview {
