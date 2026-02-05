@@ -16,6 +16,7 @@ class SoundManager {
         if let url = Bundle.main.url(forResource: soundName, withExtension: ".mp3") {
             do {
                 soundEffectPlayer = try AVAudioPlayer(contentsOf: url)
+                soundEffectPlayer?.numberOfLoops = -1 
                 soundEffectPlayer?.play()
             } catch {
                 print("Error playing sound: \(error.localizedDescription)")
@@ -43,6 +44,21 @@ class SoundManager {
             }
             
         }
+
         
+    }
+    
+    func stopImportedSound() {
+        soundEffectPlayer?.stop()
+    }
+
+    
+    
+    func pauseImportedSound() {
+        soundEffectPlayer?.pause()
+    }
+
+    func resumeImportedSound() {
+        soundEffectPlayer?.play()
     }
 }

@@ -13,7 +13,6 @@ struct SplashScreenView: View {
     @State private var seaIn = false
     @State private var shipIn = false
     @State private var buttonIn = false
-    @State private var isMusicOn = false
     
     private let cloudWidth: CGFloat = 426
     private let seaSize = CGSize(width: 852, height: 393)
@@ -67,6 +66,7 @@ struct SplashScreenView: View {
             VStack {
                 Spacer().frame(height: 400)
                 Button("لنبحر") {
+                    SoundManager.shared.stopImportedSound()
                     print("Tapped")
                 }
                 .frame(width: 146, height: 47)
@@ -85,6 +85,11 @@ struct SplashScreenView: View {
                     }
                 }
             }
+        }
+        .onAppear {
+            SoundManager.shared.playImportedSound(
+                named: "LoadingScreenSound"
+            )
         }
     }
 }
