@@ -29,38 +29,9 @@
 		95A8A0C52F2B522400A85399 /* AlNahamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlNahamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		6BA3F6B02F33FCC100B56CF3 /* Exceptions for "AlNaham" folder in "AlNaham" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 95A8A0AD2F2B522400A85399 /* AlNaham */;
-		};
-		6BA3F6B12F33FDC700B56CF3 /* Exceptions for "AlNaham" folder in "AlNahamTests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Waseem.ttc,
-			);
-			target = 95A8A0BA2F2B522400A85399 /* AlNahamTests */;
-		};
-		6BA3F6B22F33FDC700B56CF3 /* Exceptions for "AlNaham" folder in "AlNahamUITests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Waseem.ttc,
-			);
-			target = 95A8A0C42F2B522400A85399 /* AlNahamUITests */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		95A8A0B02F2B522400A85399 /* AlNaham */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				6BA3F6B02F33FCC100B56CF3 /* Exceptions for "AlNaham" folder in "AlNaham" target */,
-				6BA3F6B12F33FDC700B56CF3 /* Exceptions for "AlNaham" folder in "AlNahamTests" target */,
-				6BA3F6B22F33FDC700B56CF3 /* Exceptions for "AlNaham" folder in "AlNahamUITests" target */,
-			);
 			path = AlNaham;
 			sourceTree = "<group>";
 		};
@@ -429,7 +400,6 @@
 				DEVELOPMENT_TEAM = 7YHB7894PL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AlNaham/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -462,7 +432,6 @@
 				DEVELOPMENT_TEAM = 7YHB7894PL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AlNaham/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
