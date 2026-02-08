@@ -7,4 +7,7 @@
 *.xcuserdatad/
 
 # Build outputs
+
 DerivedData/
+
+AlNaham.xcodeproj/project.xcworkspace/xcuserdata/ghadeer.xcuserdatad/UserInterfaceState.xcuserstate
