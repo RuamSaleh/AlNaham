@@ -18,7 +18,7 @@ struct StartJourney: View {
         
            
             Button(action: {}) {
-               Text("لنبحر") //change font after team stand up
+               Text("لنبحر") 
                    .font(.system(size: 18, weight: .medium))
                    .foregroundColor(.white)
                    .frame(width: 146, height: 47)
@@ -60,8 +60,8 @@ struct StartJourney: View {
                
            }
            
-           Text("اختر سفينتك للرحلة") //change font after team stand up
-               .font(Font.custom("Aref Ruqaa", size: 30))
+           Text("اختر سفينتك للرحلة")
+               .font(Font.custom("Aref Ruqaa", size: 35))
                .fontWeight(.bold)
                .foregroundStyle(Color.primaryText)
                .padding(.top, -240)
@@ -73,8 +73,8 @@ struct StartJourney: View {
                        .offset(x:163, y:35)
                        .foregroundStyle(Color.secondText)
                    
-                   Text("سَفينة النَّغم")//change font after team stand up
-                       .font(.custom("waseem-light", size: 16))
+                   Text("سَفينة النَّغم")
+                       .font(.custom("Aref Ruqaa", size: 16))
                        .foregroundColor(.secondText)
                        .fontWeight(.bold)
                        .offset(x:163, y:40)
@@ -109,8 +109,8 @@ struct StartJourney: View {
                        .offset(x:-153, y:2)
                        .foregroundStyle(Color.secondText)
                    
-                   Text("سَفينة السكينة")//change font after team stand up
-                       .font(.custom("waseem-light", size: 16))
+                   Text("سَفينة السكينة")
+                       .font(.custom("Aref Ruqaa", size: 16))
                        .fontWeight(.bold)
                        .foregroundColor(.secondText)
                        .offset(x:-153, y:2)
@@ -173,8 +173,9 @@ struct BreathingPopup: View {
                       .frame(width: 44, height: 44)
                         
                         Image(systemName: "lungs")
-                           .resizable()
+                            .resizable()
                             .scaledToFit()
+                            .foregroundStyle(Color.secondText)
                             .frame(width: 31, height: 22)
                             
                     }
@@ -182,7 +183,8 @@ struct BreathingPopup: View {
 
                     
                     Text("سفينة السكينة")
-                        .font(.system(size: 22, weight: .semibold))
+                        .font(.custom("Aref Ruqaa", size: 24))
+                        .fontWeight(.semibold)
                         .foregroundColor(.primaryText)
                     Spacer().frame(height: 12)
 
@@ -256,7 +258,8 @@ struct SingingPopup: View {
                 
                 
                 Text("سفينة النّغم")
-                    .font(.system(size: 22, weight: .semibold))
+                    .font(.custom("Aref Ruqaa", size: 24))
+                    .fontWeight(.semibold)
                     .foregroundColor(.primaryText)
                     
                 Spacer().frame(height: 12)
