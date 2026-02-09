@@ -15,8 +15,6 @@ struct StartJourney: View {
        ZStack {
            Color.background
            // BACKGROUND color behiend elements
-        
-           
             Button(action: {}) {
                Text("لنبحر") 
                    .font(.system(size: 18, weight: .medium))
@@ -36,7 +34,6 @@ struct StartJourney: View {
                    .frame(height: 560)
                    .padding(.top, 403)
                    .allowsHitTesting(false)
-               
            }
            
            ZStack {
@@ -46,7 +43,6 @@ struct StartJourney: View {
                    .frame(width: 352)
                    .padding(.top, 154)
                    .allowsHitTesting(false)
-
            }
            
            ZStack{
@@ -56,8 +52,6 @@ struct StartJourney: View {
                    .frame(width: 852, height: 865)
                    .padding(.top, 154)
                    .allowsHitTesting(false)
-               
-               
            }
            
            Text("اختر سفينتك للرحلة")
@@ -78,7 +72,7 @@ struct StartJourney: View {
                        .foregroundColor(.secondText)
                        .fontWeight(.bold)
                        .offset(x:163, y:40)
-                      // .padding(.trailing, -305)
+                       .padding(.trailing, 3)
                }
                    
                    Image("ship") // First ship (Single element)
@@ -152,7 +146,7 @@ struct StartJourney: View {
                }
            }
         }
-        
+    
     
     }
     
