@@ -65,15 +65,22 @@ struct SplashScreenView: View {
             // Button
             VStack {
                 Spacer().frame(height: 400)
-                Button("لنبحر") {
-                    SoundManager.shared.stopImportedSound()
-                    print("Tapped")
+                NavigationLink {
+                    StartJourney()
+                } label: {
+                    Text("لنبحر")
+                        .frame(width: 146, height: 47)
+                        .font(.system(size: 18, weight: .medium))
+                        .foregroundColor(.white)
+                        .background(Color.onSurface)
+                        .cornerRadius(24)
                 }
-                .frame(width: 146, height: 47)
-                .font(.system(size: 18, weight: .medium))
-                .foregroundColor(.white)
-                .background(Color.onSurface)
-                .cornerRadius(24)
+                .simultaneousGesture(
+                    TapGesture().onEnded {
+                        SoundManager.shared.stopImportedSound()
+                        SoundManager.shared.playImportedSound(named: "ES_Calm Waves Lapping Against Rocks, Sea, Seagulls In Background, Foam Details - Epidemic Sound")
+                    }
+                )
                 .opacity(buttonIn ? 1 : 0)
                 .offset(y: buttonIn ? 0 : 20)
                 Spacer()
