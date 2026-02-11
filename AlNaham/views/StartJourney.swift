@@ -139,6 +139,7 @@ struct StartJourney: View {
        } .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
             .ignoresSafeArea()
+            .navigationBarBackButtonHidden(true)
     
     
     }
