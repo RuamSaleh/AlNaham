@@ -77,8 +77,11 @@ struct SplashScreenView: View {
                 }
                 .simultaneousGesture(
                     TapGesture().onEnded {
-                        SoundManager.shared.stopImportedSound()
-                        SoundManager.shared.playImportedSound(named: "ES_Calm Waves Lapping Against Rocks, Sea, Seagulls In Background, Foam Details - Epidemic Sound")
+                        SoundManager.shared.crossfade(
+                            to: "ES_Calm Waves Lapping Against Rocks, Sea, Seagulls In Background, Foam Details - Epidemic Sound",
+                            duration: 3
+                        )
+
                     }
                 )
                 .opacity(buttonIn ? 1 : 0)
@@ -94,9 +97,7 @@ struct SplashScreenView: View {
             }
         }
         .onAppear {
-            SoundManager.shared.playImportedSound(
-                named: "LoadingScreenSound"
-            )
+            SoundManager.shared.playLoop(named: "LoadingScreenSound", volume: 1)
         }
     }
 }
