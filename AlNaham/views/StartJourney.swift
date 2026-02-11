@@ -13,20 +13,8 @@ struct StartJourney: View {
 
     var body: some View {
        ZStack {
-           Color.background
+           Color.black.ignoresSafeArea()
            // BACKGROUND color behiend elements
-            Button(action: {}) {
-               Text("لنبحر") 
-                   .font(.system(size: 18, weight: .medium))
-                   .foregroundColor(.white)
-                   .frame(width: 146, height: 47)
-                   .background(
-                       Capsule()
-                           .fill(Color.onSurface)
-                   )
-            }.padding(.top, -45)
-           
-           
            ZStack{
                Image("sea")
                    .resizable()
@@ -34,6 +22,9 @@ struct StartJourney: View {
                    .frame(height: 560)
                    .padding(.top, 403)
                    .allowsHitTesting(false)
+                   .background(Color.background)  // or black
+                      .clipped()
+                  
            }
            
            ZStack {
@@ -67,7 +58,7 @@ struct StartJourney: View {
                        .offset(x:163, y:35)
                        .foregroundStyle(Color.secondText)
                    
-                   Text("سَفينة النَّغم")
+                   Text("سَفينة النهمة")
                        .font(.custom("Aref Ruqaa", size: 16))
                        .foregroundColor(.secondText)
                        .fontWeight(.bold)
@@ -145,7 +136,9 @@ struct StartJourney: View {
                        .zIndex(1)
                }
            }
-        }
+       } .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.background)
+            .ignoresSafeArea()
     
     
     }
@@ -212,12 +205,12 @@ struct BreathingPopup: View {
                             .foregroundColor(.white)
                             .frame(width: 275, height: 48)
                             .background(
-                                Capsule().fill(Color.onSurface)
+                                Capsule().fill(Color.greenish)
                             )
                     }
                      //.padding(.horizontal,6)
                      .padding(.bottom, 2)
-                    
+                     
                 }
               
                 }.frame(width: 357, height: 354)
@@ -251,7 +244,7 @@ struct SingingPopup: View {
                 Spacer().frame(height: 13)
                 
                 
-                Text("سفينة النّغم")
+                Text("سفينة النهمة")
                     .font(.custom("Aref Ruqaa", size: 24))
                     .fontWeight(.semibold)
                     .foregroundColor(.primaryText)
@@ -277,7 +270,7 @@ struct SingingPopup: View {
                         .foregroundColor(.white)
                         .frame(width: 275, height: 48)
                         .background(
-                            Capsule().fill(Color.onSurface)
+                            Capsule().fill(Color.greenish)
                         )
                 }
                .padding(.top, 24)
