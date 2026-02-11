@@ -13,7 +13,7 @@ struct StartJourney: View {
 
     var body: some View {
        ZStack {
-           Color.black.ignoresSafeArea()
+           Color.background.ignoresSafeArea()
            // BACKGROUND color behiend elements
            ZStack{
                Image("sea")
