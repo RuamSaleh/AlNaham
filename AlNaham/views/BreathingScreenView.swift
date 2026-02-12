@@ -17,13 +17,11 @@ struct BreathingScreenView: View {
     @State var opacityDark = 0.0
     @State var opacityLight = 0.0
     @State var moveBoat = false
-    
     @State var moveSea = false
+    @State var showFinishedPopup = false
     
     var body: some View {
-        
         NavigationStack {
-            
             ZStack {
                 Color(.background).ignoresSafeArea()
                 
@@ -33,7 +31,6 @@ struct BreathingScreenView: View {
                         .offset(x: moveSea ? 0.6 : -0.8 , y: 160)
                         .animation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true), value: moveSea)
                 }
-                
                 
                 Image("NahamOnlyOnBoat")
                     .resizable()
@@ -61,142 +58,137 @@ struct BreathingScreenView: View {
                         }
                     }
                     .onAppear {
-                        
-                        withAnimation(.easeIn(duration: 2)) {
-                            opacityDark = 1.0
+                        // start boat and sea animations
+                        withAnimation(.easeIn(duration: 3)) {
                             moveBoat = true
                             moveSea = true
                         }
                         
-                        withAnimation(.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
+                        // Dark Clouds -----------------------
+                        withAnimation(.easeIn(duration: 3)) {
+                            opacityDark = 1.0
+                        }
+                        
+                        withAnimation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
                             wiggleDark = true
                         }
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 170) {
+                            withAnimation(.easeOut(duration: 10)) {
+                                driftDark = -1200
+                                opacityDark = 0.0
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                                showDark = false
+                            }
+                        }
+                        
+                        // Light Clouds -----------------------
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 180) {
                             showLight = true
-                            withAnimation(.easeIn(duration: 2)) {
+                            withAnimation(.easeIn(duration: 3)) {
                                 opacityLight = 1.0
                             }
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                withAnimation(.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
+                                withAnimation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
                                     wiggleLight = true
                                 }
                             }
                         }
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-                            withAnimation(.easeOut(duration: 4)) {
-                                driftDark = -1200
-                                opacityDark = 0.0
-                            }
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                                showDark = false
-                            }
-                        }
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
-                            withAnimation(.easeOut(duration: 2)) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 350) {
+                            withAnimation(.easeOut(duration: 10)) {
+                                driftLight = -1200
                                 opacityLight = 0.0
                             }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                                showLight = false
+                            }
                         }
                         
-                    } // end of onAppear
-            } // end of ZStack
-            
-        } // end of navigationStack
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 360) {
+                            showFinishedPopup = true
+                        }
+                    }
+                
+                if showFinishedPopup {
+                    Color.black.opacity(0.4)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            showFinishedPopup = false
+                        }
+                    
+                    FinishedBreathingPopup(isPresented: $showFinishedPopup)
+                        .transition(.scale.combined(with: .opacity))
+                }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
     }
-        
 }
-
 
 struct FinishedBreathingPopup: View {
     @Binding var isPresented: Bool
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 34, style: .continuous)
                 .fill(Color.surface)
                 .padding(.horizontal, 20)
             
-                VStack{
-                    HStack {
-                        Spacer()
-                        Button {
-                            isPresented = false
-                        } label: {
-                        Image(systemName: "xmark")
-                          .font(.system(size: 16, weight: .bold))
-                          .foregroundColor(.primaryText)
-                          .frame(width: 28, height: 28)
-                            }
-                          }
-                        .padding(.horizontal, 34)
-                        .padding(.top, 12)
-
-                        Spacer().frame(height: 3)
-                    
-                    ZStack {
-                   Circle()
-                      .fill(Color.background)
-                      .frame(width: 44, height: 44)
-                        
-                        Image(systemName: "lungs")
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundStyle(Color.secondText)
-                            .frame(width: 31, height: 22)
-                            
-                    }
-                    Spacer().frame(height: 12)
-
-                    
-                    Text("سفينة السكينة")
-                        .font(.custom("Aref Ruqaa", size: 24))
-                        .fontWeight(.semibold)
-                        .foregroundColor(.primaryText)
-                    Spacer().frame(height: 12)
-
-                    Text("خذ استراحة من ضجيج التغيير. هذه\nالرحلة صُممت لتكون مساحتك الخاصة،\nحيث تحول اضطراب المشاعر إلى أنفاس\nهادئة تصل بك إلى بر الأمان.")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundColor(.primaryText)
-                        .multilineTextAlignment(.center)
-                        //.lineSpacing(6)
-                        .padding(.horizontal, 22)
-                    Spacer().frame(height: 18)
-
-                    HStack{
-                        Image(systemName: "clock")
-                            .font(.system(size: 14, weight: .medium))
-                            .foregroundColor(.secondText.opacity(0.6))
-
-                        Text("رحلة مدتها ٦ دقائق")
-                            .font(.system(size: 15, weight: .regular))
-                            .foregroundColor(.secondText.opacity(0.6))
-                    }
-                    .environment(\.layoutDirection, .rightToLeft)
-                    .padding(.bottom, 10)
-
-
-                    // button -> navigates to breathing excrcis
-                    NavigationLink {
-                        BreathingScreenView()
+            VStack{
+                HStack {
+                    Spacer()
+                    Button {
+                        isPresented = false
+                        dismiss()
                     } label: {
-                        Text("لنبحر")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundColor(.white)
-                            .frame(width: 275, height: 48)
-                            .background(
-                                Capsule().fill(Color.darkGreen)
-                            )
-                        
+                        Image(systemName: "xmark")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(.primaryText)
+                            .frame(width: 28, height: 28)
                     }
-                     .padding(.bottom, 22)
-                     
                 }
-              
-                }.frame(width: 357, height: 354)
-         
+                .padding(.horizontal, 34)
+                .padding(.top, 12)
+                
+                Spacer().frame(height: 3)
+                
+                Text("مرسى الأمان!")
+                    .font(.custom("Aref Ruqaa", size: 24))
+                    .fontWeight(.semibold)
+                    .foregroundColor(.primaryText)
+                Spacer().frame(height: 24)
+                
+                Text("أتممت ٣٦ نفساً بنجاح!\nهذا الإيقاع المنضبط حفّز العصب الحائر لديك، مما خفض استجابة جسدك للتوتر وأعاد توازن مؤشراتك الحيوية بشكل فسيولوجي.")
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundColor(.primaryText)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 27)
+                Spacer().frame(height: 18)
+                
+                NavigationLink {
+                    StartJourney()
+                } label: {
+                    Text("العودة للمرفأ")
+                        .font(.system(size: 17, weight: .semibold))
+                        .foregroundColor(.white)
+                        .frame(width: 275, height: 48)
+                        .background(
+                            Capsule().fill(Color.darkGreen)
+                        )
+                }
+                .simultaneousGesture(TapGesture().onEnded {
+                    isPresented = false
+                })
+                .padding(.bottom, 22)
             }
         }
+        .frame(width: 357, height: 354)
+    }
+}
+
 
 
 #Preview {
