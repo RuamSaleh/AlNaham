@@ -142,17 +142,17 @@ struct StartJourney: View {
             .background(Color.background)
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    NavigationLink {
-                        SettingsView()
-                    }
-                    label: {
-                        Image(systemName: "gearshape.fill")
-                            .foregroundStyle(Color.secondText)
-                    }
-                }
-            }
+//            .toolbar {
+//                ToolbarItem(placement: .topBarTrailing) {
+//                    NavigationLink {
+//                        SettingsView()
+//                    }
+//                    label: {
+//                        Image(systemName: "gearshape.fill")
+//                            .foregroundStyle(Color.secondText)
+//                    }
+//                }
+//            }
         }
     }
 }
