@@ -118,10 +118,6 @@ struct SettingsView: View {
             vm.handleSoundChange(vm.settings.isLoadingSoundOn)
             
             SoundManager.shared.playLoadingSound()
-//            
-//            SoundManager.shared.playLoop(
-//                named: "ES_Calm Waves Lapping Against Rocks, Sea, Seagulls In Background, Foam Details - Epidemic Sound"
-//            )
         }
         
     }
@@ -291,7 +287,9 @@ struct InfoSection: View {
             }
             
             Text("""
-نعتز بالتعاون مع الفنانة أحلام، التي جسدت أصالة التراث برسم يدوي عصري خصيصاً لهذا المشروع. يمكنكم دعم مسيرتها والاطلاع على أعمالها عبر التواصل من خلال ahlamalonazi21@gmail.com
+يتضمن التطبيق بعض الأعمال الفنية المنفذة بالتعاون مع الفنانة أحلام.
+نقدّر مساهمتها الإبداعية في دعم الهوية البصرية للمشروع.
+جميع الحقوق محفوظة ومستخدمة بموجب اتفاق.
 """)
             .font(.system(size: 14))
             

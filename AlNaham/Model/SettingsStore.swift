@@ -5,7 +5,6 @@
 //  Created by ruam on 23/08/1447 AH.
 //
 import SwiftUI
-import SwiftData
 internal import Combine
 
 final class SettingsStore: ObservableObject {
@@ -31,6 +30,9 @@ final class SettingsStore: ObservableObject {
 
     init() {
         load()
+        
+        // Sync SoundManager immediately on app launch
+        SoundManager.shared.setMuted(!settings.isLoadingSoundOn)
     }
 
 
@@ -51,3 +53,4 @@ final class SettingsStore: ObservableObject {
         rating = settings.userRating
     }
 }
+

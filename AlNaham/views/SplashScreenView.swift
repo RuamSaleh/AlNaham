@@ -20,6 +20,7 @@ struct SplashScreenView: View {
     
     var body: some View {
         ZStack {
+            Color.background.ignoresSafeArea()
             // Clouds
             ZStack {
                 Image("cloudL")
@@ -72,7 +73,7 @@ struct SplashScreenView: View {
                         .frame(width: 146, height: 47)
                         .font(.system(size: 18, weight: .medium))
                         .foregroundColor(.white)
-                        .background(Color.onSurface)
+                        .background(Color.darkGreen)
                         .cornerRadius(24)
                 }
                 .simultaneousGesture(

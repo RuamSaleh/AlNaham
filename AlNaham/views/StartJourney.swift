@@ -1,4 +1,3 @@
-//
 //  Home.swift
 //  AlNaham
 //
@@ -10,16 +9,17 @@ import SwiftUI
 struct StartJourney: View {
     @State private var ShowBreathingPopup = false
     @State private var ShowSingingPopup = false
-
+    
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.background.ignoresSafeArea()
+                Color.black.ignoresSafeArea()
                 // BACKGROUND color behiend elements
                 ZStack{
                     Image("sea")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode:
+                                .fit)
                         .frame(height: 560)
                         .padding(.top, 403)
                         .allowsHitTesting(false)
@@ -126,13 +126,13 @@ struct StartJourney: View {
                         }
                     
                     if ShowBreathingPopup {
-                        BreathingPopup()
+                        BreathingPopup(isPresented: $ShowBreathingPopup)
                             .transition(.scale)
                             .zIndex(1)
                     }
                     
                     if ShowSingingPopup {
-                        SingingPopup()
+                        SingingPopup(isPresented: $ShowSingingPopup)
                             .transition(.scale)
                             .zIndex(1)
                     }
@@ -146,19 +146,19 @@ struct StartJourney: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
                         SettingsView()
-                    } label: {
+                    }
+                    label: {
                         Image(systemName: "gearshape.fill")
-                            .foregroundStyle(Color.primaryText)
+                            .foregroundStyle(Color.secondText)
                     }
                 }
             }
         }
-    
     }
-    
 }
 
 struct BreathingPopup: View {
+    @Binding var isPresented: Bool
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 34, style: .continuous)
@@ -166,7 +166,22 @@ struct BreathingPopup: View {
                 .padding(.horizontal, 20)
             
                 VStack{
-                    Spacer().frame(height: 25)
+                    HStack {
+                        Spacer()
+                        Button {
+                            isPresented = false
+                        } label: {
+                        Image(systemName: "xmark")
+                          .font(.system(size: 16, weight: .bold))
+                          .foregroundColor(.primaryText)
+                          .frame(width: 28, height: 28)
+                            }
+                          }
+                        .padding(.horizontal, 34)
+                        .padding(.top, 12)
+
+                        Spacer().frame(height: 3)
+                    
                     ZStack {
                    Circle()
                       .fill(Color.background)
@@ -212,17 +227,19 @@ struct BreathingPopup: View {
                     // button -> navigates to breathing excrcis
                     NavigationLink {
                         BreathingScreenView()
+                       // Text("breathing excercis")
                     } label: {
                         Text("لنبحر")
                             .font(.system(size: 17, weight: .semibold))
                             .foregroundColor(.white)
                             .frame(width: 275, height: 48)
                             .background(
-                                Capsule().fill(Color.greenish)
+                                Capsule().fill(Color.darkGreen)
                             )
+                        
                     }
-                     //.padding(.horizontal,6)
-                     .padding(.bottom, 2)
+                    // .padding(.horizontal,6)
+                     .padding(.bottom, 22)
                      
                 }
               
@@ -233,14 +250,30 @@ struct BreathingPopup: View {
 
 
 struct SingingPopup: View {
+    @Binding var isPresented: Bool
     var body: some View{
         ZStack{
             RoundedRectangle(cornerRadius: 34, style: .continuous)
                 .fill(Color.surface)
                 .padding(.horizontal, 20)
             
-            VStack{
-                Spacer().frame(height: 22)
+            VStack(spacing: 0){
+                HStack {
+                    Spacer()
+                    Button {
+                        isPresented = false
+                    } label: {
+                    Image(systemName: "xmark")
+                      .font(.system(size: 16, weight: .bold))
+                      .foregroundColor(.primaryText)
+                      .frame(width: 28, height: 28)
+                        }
+                    
+                      }.padding(.horizontal, 34)
+                    .padding(.top,-12)
+                   
+                    //.padding(.top, 0)
+
                    
                 ZStack {
                     Circle()
@@ -272,21 +305,20 @@ struct SingingPopup: View {
                     .padding(.horizontal, 32)
                 Spacer().frame(height: 18)
                 
-
                 
                 // button -> navigates to singing excrcis
-                NavigationLink {
-                    Text("singing excercis")
-                } label: {
+                Button(action: {
+                    // Intentionally no navigation
+                }) {
                     Text("لنبحر")
                         .font(.system(size: 17, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(width: 275, height: 48)
                         .background(
-                            Capsule().fill(Color.greenish)
+                            Capsule().fill(Color.gray)
                         )
                 }
-               .padding(.top, 24)
+               .padding(.top, 11)
                 
             }
             //.padding(.top, 51)
