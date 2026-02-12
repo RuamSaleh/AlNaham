@@ -12,135 +12,147 @@ struct StartJourney: View {
     @State private var ShowSingingPopup = false
 
     var body: some View {
-       ZStack {
-           Color.background.ignoresSafeArea()
-           // BACKGROUND color behiend elements
-           ZStack{
-               Image("sea")
-                   .resizable()
-                   .aspectRatio(contentMode: .fit)
-                   .frame(height: 560)
-                   .padding(.top, 403)
-                   .allowsHitTesting(false)
-                   .background(Color.background)  // or black
-                      .clipped()
-                  
-           }
-           
-           ZStack {
-               Image("cloudL")
-                   .resizable()
-                   .aspectRatio(contentMode: .fill)
-                   .frame(width: 352)
-                   .padding(.top, 154)
-                   .allowsHitTesting(false)
-           }
-           
-           ZStack{
-                Image("cloudR")
-                   .resizable()
-                   .aspectRatio(contentMode: .fit)
-                   .frame(width: 852, height: 865)
-                   .padding(.top, 154)
-                   .allowsHitTesting(false)
-           }
-           
-           Text("اختر سفينتك للرحلة")
-               .font(Font.custom("Aref Ruqaa", size: 35))
-               .fontWeight(.bold)
-               .foregroundStyle(Color.primaryText)
-               .padding(.top, -240)
-           
-           
-           ZStack{
-               VStack{
-                   Image(systemName: "water.waves")
-                       .offset(x:163, y:35)
-                       .foregroundStyle(Color.secondText)
-                   
-                   Text("سَفينة النهمة")
-                       .font(.custom("Aref Ruqaa", size: 16))
-                       .foregroundColor(.secondText)
-                       .fontWeight(.bold)
-                       .offset(x:163, y:40)
-                       .padding(.trailing, 3)
-               }
-                   
-                   Image("ship") // First ship (Single element)
-                       .resizable()
-                       .aspectRatio(contentMode: .fit)
-                       .frame(width: 615, height: 685)
-                       .padding(.trailing, 345)
-                       .padding(.top, 340)
-                       .onTapGesture {
-                           ShowSingingPopup = false
-                           ShowBreathingPopup = true
-                       }
-           }
-           
-           
-           ZStack{
-               Image("path") // The Path (single element)
-                   .resizable()
-                   .aspectRatio(contentMode: .fit)
-                   .frame(width: 370, height: 846)
-                   .padding(.top, 46)
-                   .allowsHitTesting(false)
-           }
-            
-           ZStack{
-               VStack{
-                   Image(systemName: "lungs")
-                       .offset(x:-153, y:2)
-                       .foregroundStyle(Color.secondText)
-                   
-                   Text("سَفينة السكينة")
-                       .font(.custom("Aref Ruqaa", size: 16))
-                       .fontWeight(.bold)
-                       .foregroundColor(.secondText)
-                       .offset(x:-153, y:2)
-               }
-               
-               Image("ship") // Second ship (single element)
-                   .resizable()
-                   .aspectRatio(contentMode: .fit)
-                   .frame(width: 281, height: 451)
-                   .offset(x: 154, y: 161)
-                   .onTapGesture {
-                       ShowSingingPopup = true
-                       ShowBreathingPopup = false
-                   }
-                   
-                   //.padding(.top, 315) (leave for referance)
-           }
-           
-           //overlay for dimming the backgriund
-           
-           if ShowBreathingPopup || ShowSingingPopup {
-               Color.black.opacity(0.25)
-                   .ignoresSafeArea()
-                   .onTapGesture {
-                       ShowBreathingPopup = false
-                       ShowSingingPopup = false
-                   }
-
-               if ShowBreathingPopup {
-                   BreathingPopup()
-                       .transition(.scale)
-                       .zIndex(1)
-               }
-
-               if ShowSingingPopup {
-                   SingingPopup()
-                       .transition(.scale)
-                       .zIndex(1)
-               }
-           }
-       } .frame(maxWidth: .infinity, maxHeight: .infinity)
+        NavigationStack {
+            ZStack {
+                Color.background.ignoresSafeArea()
+                // BACKGROUND color behiend elements
+                ZStack{
+                    Image("sea")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 560)
+                        .padding(.top, 403)
+                        .allowsHitTesting(false)
+                        .background(Color.background)  // or black
+                        .clipped()
+                    
+                }
+                
+                ZStack {
+                    Image("cloudL")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 352)
+                        .padding(.top, 154)
+                        .allowsHitTesting(false)
+                }
+                
+                ZStack{
+                    Image("cloudR")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 852, height: 865)
+                        .padding(.top, 154)
+                        .allowsHitTesting(false)
+                }
+                
+                Text("اختر سفينتك للرحلة")
+                    .font(Font.custom("Aref Ruqaa", size: 35))
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color.primaryText)
+                    .padding(.top, -240)
+                
+                
+                ZStack{
+                    VStack{
+                        Image(systemName: "water.waves")
+                            .offset(x:163, y:35)
+                            .foregroundStyle(Color.secondText)
+                        
+                        Text("سَفينة النهمة")
+                            .font(.custom("Aref Ruqaa", size: 16))
+                            .foregroundColor(.secondText)
+                            .fontWeight(.bold)
+                            .offset(x:163, y:40)
+                            .padding(.trailing, 3)
+                    }
+                    
+                    Image("ship") // First ship (Single element)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 615, height: 685)
+                        .padding(.trailing, 345)
+                        .padding(.top, 340)
+                        .onTapGesture {
+                            ShowSingingPopup = false
+                            ShowBreathingPopup = true
+                        }
+                }
+                
+                
+                ZStack{
+                    Image("path") // The Path (single element)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 370, height: 846)
+                        .padding(.top, 46)
+                        .allowsHitTesting(false)
+                }
+                
+                ZStack{
+                    VStack{
+                        Image(systemName: "lungs")
+                            .offset(x:-153, y:2)
+                            .foregroundStyle(Color.secondText)
+                        
+                        Text("سَفينة السكينة")
+                            .font(.custom("Aref Ruqaa", size: 16))
+                            .fontWeight(.bold)
+                            .foregroundColor(.secondText)
+                            .offset(x:-153, y:2)
+                    }
+                    
+                    Image("ship") // Second ship (single element)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 281, height: 451)
+                        .offset(x: 154, y: 161)
+                        .onTapGesture {
+                            ShowSingingPopup = true
+                            ShowBreathingPopup = false
+                        }
+                    
+                    //.padding(.top, 315) (leave for referance)
+                }
+                
+                //overlay for dimming the backgriund
+                
+                if ShowBreathingPopup || ShowSingingPopup {
+                    Color.black.opacity(0.25)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            ShowBreathingPopup = false
+                            ShowSingingPopup = false
+                        }
+                    
+                    if ShowBreathingPopup {
+                        BreathingPopup()
+                            .transition(.scale)
+                            .zIndex(1)
+                    }
+                    
+                    if ShowSingingPopup {
+                        SingingPopup()
+                            .transition(.scale)
+                            .zIndex(1)
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background)
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
-    
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                            .foregroundStyle(Color.primaryText)
+                    }
+                }
+            }
+        }
     
     }
     
@@ -199,7 +211,7 @@ struct BreathingPopup: View {
 
                     // button -> navigates to breathing excrcis
                     NavigationLink {
-                        Text("breathing excercis")
+                        BreathingScreenView()
                     } label: {
                         Text("لنبحر")
                             .font(.system(size: 17, weight: .semibold))

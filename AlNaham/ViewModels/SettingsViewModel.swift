@@ -25,11 +25,7 @@ final class SettingsViewModel: ObservableObject {
         store.save()
     }
     func handleSoundChange(_ isOn: Bool) {
-
-        if isOn {
-            SoundManager.shared.unmuteLoadingSound()
-        } else {
-            SoundManager.shared.muteLoadingSound()
-        }
+        SoundManager.shared.setMuted(!isOn)
     }
+
 }
