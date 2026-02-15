@@ -239,6 +239,15 @@ struct BreathingPopup: View {
                         
                     }
                     // .padding(.horizontal,6)
+                    .simultaneousGesture(
+                        TapGesture().onEnded {
+                            SoundManager.shared.crossfade(
+                                to: "سفينة السكينه",
+                                duration: 3
+                            )
+
+                        }
+                    )
                      .padding(.bottom, 22)
                      
                 }
