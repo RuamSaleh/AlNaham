@@ -139,6 +139,7 @@
 //    
 //    static let title = Font.custom("Aref Ruqaa", size: 34).bold()
 //    static let section = Font.custom("Aref Ruqaa", size: 20).bold()
+//
 //}
 //
 //

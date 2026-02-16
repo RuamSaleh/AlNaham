@@ -36,8 +36,8 @@ struct BreathingScreenView: View {
                     .resizable()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .ignoresSafeArea()
-                    .offset(y: moveBoat ? 10 : 30)
-                    .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: moveBoat)
+                    .offset(y: moveBoat ? 3 : 45)
+                    .animation(.easeInOut(duration: 5).repeatForever(autoreverses: true), value: moveBoat)
                     .overlay {
                         if showLight {
                             Image("LightClouds")
@@ -123,7 +123,10 @@ struct BreathingScreenView: View {
                 }
             }
         }
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(false)
+        .onDisappear {
+            SoundManager.shared.crossfade(to: "ES_Calm Waves Lapping Against Rocks, Sea, Seagulls In Background, Foam Details - Epidemic Sound", duration: 3)
+        }
     }
 }
 
@@ -181,6 +184,8 @@ struct FinishedBreathingPopup: View {
                 }
                 .simultaneousGesture(TapGesture().onEnded {
                     isPresented = false
+                    SoundManager.shared.crossfade(to: "ES_Calm Waves Lapping Against Rocks, Sea, Seagulls In Background, Foam Details - Epidemic Sound", duration: 2)
+
                 })
                 .padding(.bottom, 22)
             }
