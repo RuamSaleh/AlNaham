@@ -46,7 +46,7 @@ struct StartJourney: View {
                         .allowsHitTesting(false)
                 }
                 
-                Text("اختر سفينتك للرحلة")
+                Text(LocalizedStringKey("اختر سفينتك للرحلة"))
                     .font(Font.custom("Aref Ruqaa", size: 35))
                     .fontWeight(.bold)
                     .foregroundStyle(Color.primaryText)
@@ -59,7 +59,7 @@ struct StartJourney: View {
                             .offset(x:163, y:35)
                             .foregroundStyle(Color.secondText)
                         
-                        Text("سَفينة النهمة")
+                        Text(LocalizedStringKey("سَفينة النهمة"))
                             .font(.custom("Aref Ruqaa", size: 16))
                             .foregroundColor(.secondText)
                             .fontWeight(.bold)
@@ -95,7 +95,7 @@ struct StartJourney: View {
                             .offset(x:-153, y:2)
                             .foregroundStyle(Color.secondText)
                         
-                        Text("سَفينة السكينة")
+                        Text(LocalizedStringKey("سَفينة السكينة"))
                             .font(.custom("Aref Ruqaa", size: 16))
                             .fontWeight(.bold)
                             .foregroundColor(.secondText)
@@ -197,13 +197,13 @@ struct BreathingPopup: View {
                     Spacer().frame(height: 12)
 
                     
-                    Text("سفينة السكينة")
+                    Text(LocalizedStringKey("سفينة السكينة"))
                         .font(.custom("Aref Ruqaa", size: 24))
                         .fontWeight(.semibold)
                         .foregroundColor(.primaryText)
                     Spacer().frame(height: 12)
 
-                    Text("خذ استراحة من ضجيج التغيير. هذه\nالرحلة صُممت لتكون مساحتك الخاصة،\nحيث تحول اضطراب المشاعر إلى أنفاس\nهادئة تصل بك إلى بر الأمان.")
+                    Text(LocalizedStringKey("خذ استراحة من ضجيج التغيير. هذه\nالرحلة صُممت لتكون مساحتك الخاصة،\nحيث تحول اضطراب المشاعر إلى أنفاس\nهادئة تصل بك إلى بر الأمان."))
                         .font(.system(size: 17, weight: .medium))
                         .foregroundColor(.primaryText)
                         .multilineTextAlignment(.center)
@@ -216,7 +216,7 @@ struct BreathingPopup: View {
                             .font(.system(size: 14, weight: .medium))
                             .foregroundColor(.secondText.opacity(0.6))
 
-                        Text("رحلة مدتها ٦ دقائق")
+                        Text(LocalizedStringKey("رحلة مدتها ٦ دقائق"))
                             .font(.system(size: 15, weight: .regular))
                             .foregroundColor(.secondText.opacity(0.6))
                     }
@@ -229,7 +229,7 @@ struct BreathingPopup: View {
                         BreathingScreenView()
                        // Text("breathing excercis")
                     } label: {
-                        Text("لنبحر")
+                        Text(LocalizedStringKey("لنبحر"))
                             .font(.system(size: 17, weight: .semibold))
                             .foregroundColor(.white)
                             .frame(width: 275, height: 48)
@@ -299,14 +299,14 @@ struct SingingPopup: View {
                 Spacer().frame(height: 13)
                 
                 
-                Text("سفينة النهمة")
+                Text(LocalizedStringKey("سفينة النهمة"))
                     .font(.custom("Aref Ruqaa", size: 24))
                     .fontWeight(.semibold)
                     .foregroundColor(.primaryText)
                     
                 Spacer().frame(height: 12)
                 
-                Text("أطلق صوتك لتهدأ روحك. هذه\nالرحلة صُممت لتكون صدى مشاعرك؛\nننسجُ من صوتك وصوت البحر لحناً\nيبدد شتات النفس، ويصل بك إلى مرسى الأمان.")
+                Text(LocalizedStringKey("أطلق صوتك لتهدأ روحك. هذه\nالرحلة صُممت لتكون صدى مشاعرك؛\nننسجُ من صوتك وصوت البحر لحناً\nيبدد شتات النفس، ويصل بك إلى مرسى الأمان."))
                     .font(.system(size: 17, weight: .medium))
                     .foregroundColor(.primaryText)
                     .multilineTextAlignment(.center)
@@ -319,7 +319,7 @@ struct SingingPopup: View {
                 Button(action: {
                     // Intentionally no navigation
                 }) {
-                    Text("لنبحر")
+                    Text(LocalizedStringKey("لنبحر"))
                         .font(.system(size: 17, weight: .semibold))
                         .foregroundColor(.white)
                         .frame(width: 275, height: 48)

@@ -1,0 +1,146 @@
+{
+  "sourceLanguage" : "ar",
+  "strings" : {
+    "أتممت ٣٦ نفساً بنجاح!\nهذا الإيقاع المنضبط حفّز العصب الحائر لديك، مما خفض استجابة جسدك للتوتر وأعاد توازن مؤشراتك الحيوية بشكل فسيولوجي." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You completed 36 breaths successfully! This steady rhythm sparked your wandering nerve, easing your body’s stress response and restoring your vital signs’ balance naturally."
+          }
+        }
+      }
+    },
+    "أطلق صوتك لتهدأ روحك. هذه\nالرحلة صُممت لتكون صدى مشاعرك؛\nننسجُ من صوتك وصوت البحر لحناً\nيبدد شتات النفس، ويصل بك إلى مرسى الأمان." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release your voice to calm your soul. This journey is crafted as an echo of your feelings; we weave from your voice and the sea’s song a melody that scatters the mind’s unrest and brings you to the harbor of peace."
+          }
+        }
+      }
+    },
+    "أطلق صوتك لتهدأ روحك. هذه الرحلة صُممت لتكون صدى مشاعرك؛ ننسجُ من صوتك وصوت البحر لحناً يبدد شتات النفس، ويصل بك إلى مرسى الأمان." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release your voice to calm your soul. This journey is crafted as an echo of your feelings; we weave from your voice and the sea’s song a melody that scatters the mind’s unrest and brings you to the harbor of peace."
+          }
+        }
+      }
+    },
+    "اختر سفينتك للرحلة" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose your vessel for the journey\n"
+          }
+        }
+      }
+    },
+    "العودة للمرفأ" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Return to the harbor"
+          }
+        }
+      }
+    },
+    "خذ استراحة من ضجيج التغيير. هذه\nالرحلة صُممت لتكون مساحتك الخاصة،\nحيث تحول اضطراب المشاعر إلى أنفاس\nهادئة تصل بك إلى بر الأمان." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take a pause from the noise of change. This journey is designed to be your private space, where the turmoil of feelings turns into calm breaths that carry you to safe shores."
+          }
+        }
+      }
+    },
+    "خذ استراحة من ضجيج التغيير. هذه الرحلة صُممت لتكون مساحتك الخاصة، حيث تحول اضطراب المشاعر إلى أنفاس هادئة تصل بك إلى بر الأمان." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take a pause from the noise of change. This journey is designed to be your private space, where the turmoil of feelings turns into calm breaths that carry you to safe shores."
+          }
+        }
+      }
+    },
+    "رحلة مدتها ٦ دقائق" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A 6 minute journey\n"
+          }
+        }
+      }
+    },
+    "سفينة السكينة" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "alsakeena Ship"
+          }
+        }
+      }
+    },
+    "سَفينة السكينة" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "alsakeena Ship"
+          }
+        }
+      }
+    },
+    "سفينة النهمة" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "annahma Ship"
+          }
+        }
+      }
+    },
+    "سَفينة النهمة" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "annahma Ship"
+          }
+        }
+      }
+    },
+    "لنبحر" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sail"
+          }
+        }
+      }
+    },
+    "مرسى الأمان!" : {
+
+    }
+  },
+  "version" : "1.1"
+}

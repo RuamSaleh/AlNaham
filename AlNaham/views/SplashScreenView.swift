@@ -69,7 +69,7 @@ struct SplashScreenView: View {
                 NavigationLink {
                     StartJourney()
                 } label: {
-                    Text("لنبحر")
+                    Text(LocalizedStringKey("لنبحر"))
                         .frame(width: 146, height: 47)
                         .font(.system(size: 18, weight: .medium))
                         .foregroundColor(.white)
