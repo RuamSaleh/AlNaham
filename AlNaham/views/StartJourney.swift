@@ -108,7 +108,7 @@ struct StartJourney: View {
                         .frame(width: 281, height: 451)
                         .offset(x: 154, y: 161)
                         .onTapGesture {
-                            ShowSingingPopup = true
+                           // ShowSingingPopup = true
                             ShowBreathingPopup = false
                         }
                     
@@ -131,11 +131,11 @@ struct StartJourney: View {
                             .zIndex(1)
                     }
                     
-                    if ShowSingingPopup {
-                        SingingPopup(isPresented: $ShowSingingPopup)
-                            .transition(.scale)
-                            .zIndex(1)
-                    }
+//                    if ShowSingingPopup {
+//                        SingingPopup(isPresented: $ShowSingingPopup)
+//                            .transition(.scale)
+//                            .zIndex(1)
+//                    }
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -258,83 +258,83 @@ struct BreathingPopup: View {
         }
 
 
-struct SingingPopup: View {
-    @Binding var isPresented: Bool
-    var body: some View{
-        ZStack{
-            RoundedRectangle(cornerRadius: 34, style: .continuous)
-                .fill(Color.surface)
-                .padding(.horizontal, 20)
-            
-            VStack(spacing: 0){
-                HStack {
-                    Spacer()
-                    Button {
-                        isPresented = false
-                    } label: {
-                    Image(systemName: "xmark")
-                      .font(.system(size: 16, weight: .bold))
-                      .foregroundColor(.primaryText)
-                      .frame(width: 28, height: 28)
-                        }
-                    
-                      }.padding(.horizontal, 34)
-                    .padding(.top,-12)
-                   
-                    //.padding(.top, 0)
-
-                   
-                ZStack {
-                    Circle()
-                        .fill(Color.background)
-                        .frame(width: 44, height: 44)
-                    
-                    Image(systemName: "water.waves")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundStyle(.secondText)
-                        .frame(width: 31, height: 22)
-                    
-                }
-                Spacer().frame(height: 13)
-                
-                
-                Text(LocalizedStringKey("سفينة النهمة"))
-                    .font(.custom("Aref Ruqaa", size: 24))
-                    .fontWeight(.semibold)
-                    .foregroundColor(.primaryText)
-                    
-                Spacer().frame(height: 12)
-                
-                Text(LocalizedStringKey("أطلق صوتك لتهدأ روحك. هذه\nالرحلة صُممت لتكون صدى مشاعرك؛\nننسجُ من صوتك وصوت البحر لحناً\nيبدد شتات النفس، ويصل بك إلى مرسى الأمان."))
-                    .font(.system(size: 17, weight: .medium))
-                    .foregroundColor(.primaryText)
-                    .multilineTextAlignment(.center)
-                //.lineSpacing(6)
-                    .padding(.horizontal, 32)
-                Spacer().frame(height: 18)
-                
-                
-                // button -> navigates to singing excrcis
-                Button(action: {
-                    // Intentionally no navigation
-                }) {
-                    Text(LocalizedStringKey("لنبحر"))
-                        .font(.system(size: 17, weight: .semibold))
-                        .foregroundColor(.white)
-                        .frame(width: 275, height: 48)
-                        .background(
-                            Capsule().fill(Color.gray)
-                        )
-                }
-               .padding(.top, 11)
-                
-            }
-            //.padding(.top, 51)
-        }.frame(width: 357, height: 354)
-        
-    }
-}
+//struct SingingPopup: View {
+//    @Binding var isPresented: Bool
+//    var body: some View{
+//        ZStack{
+//            RoundedRectangle(cornerRadius: 34, style: .continuous)
+//                .fill(Color.surface)
+//                .padding(.horizontal, 20)
+//            
+//            VStack(spacing: 0){
+//                HStack {
+//                    Spacer()
+//                    Button {
+//                        isPresented = false
+//                    } label: {
+//                    Image(systemName: "xmark")
+//                      .font(.system(size: 16, weight: .bold))
+//                      .foregroundColor(.primaryText)
+//                      .frame(width: 28, height: 28)
+//                        }
+//                    
+//                      }.padding(.horizontal, 34)
+//                    .padding(.top,-12)
+//                   
+//                    //.padding(.top, 0)
+//
+//                   
+//                ZStack {
+//                    Circle()
+//                        .fill(Color.background)
+//                        .frame(width: 44, height: 44)
+//                    
+//                    Image(systemName: "water.waves")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .foregroundStyle(.secondText)
+//                        .frame(width: 31, height: 22)
+//                    
+//                }
+//                Spacer().frame(height: 13)
+//                
+//                
+//                Text(LocalizedStringKey("سفينة النهمة"))
+//                    .font(.custom("Aref Ruqaa", size: 24))
+//                    .fontWeight(.semibold)
+//                    .foregroundColor(.primaryText)
+//                    
+//                Spacer().frame(height: 12)
+//                
+//                Text(LocalizedStringKey("أطلق صوتك لتهدأ روحك. هذه\nالرحلة صُممت لتكون صدى مشاعرك؛\nننسجُ من صوتك وصوت البحر لحناً\nيبدد شتات النفس، ويصل بك إلى مرسى الأمان."))
+//                    .font(.system(size: 17, weight: .medium))
+//                    .foregroundColor(.primaryText)
+//                    .multilineTextAlignment(.center)
+//                //.lineSpacing(6)
+//                    .padding(.horizontal, 32)
+//                Spacer().frame(height: 18)
+//                
+//                
+//                // button -> navigates to singing excrcis
+//                Button(action: {
+//                    // Intentionally no navigation
+//                }) {
+//                    Text(LocalizedStringKey("لنبحر"))
+//                        .font(.system(size: 17, weight: .semibold))
+//                        .foregroundColor(.white)
+//                        .frame(width: 275, height: 48)
+//                        .background(
+//                            Capsule().fill(Color.gray)
+//                        )
+//                }
+//               .padding(.top, 11)
+//                
+//            }
+//            //.padding(.top, 51)
+//        }.frame(width: 357, height: 354)
+//        
+//    }
+//}
 
 
 #Preview {
