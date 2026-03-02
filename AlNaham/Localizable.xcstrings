@@ -12,6 +12,7 @@
       }
     },
     "أطلق صوتك لتهدأ روحك. هذه\nالرحلة صُممت لتكون صدى مشاعرك؛\nننسجُ من صوتك وصوت البحر لحناً\nيبدد شتات النفس، ويصل بك إلى مرسى الأمان." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -107,6 +108,7 @@
       }
     },
     "سفينة النهمة" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
