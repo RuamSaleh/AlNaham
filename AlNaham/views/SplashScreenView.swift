@@ -26,13 +26,13 @@ struct SplashScreenView: View {
                 Color.background.ignoresSafeArea()
                 // Clouds
                 ZStack {
-                    Image("cloudL")
+                    Image("cloudR")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: screenWidth * 1.1)
                         .offset(x: cloudsIn ?/* -12 : 400)*/-screenWidth * 0.0 : screenWidth)
                     
-                    Image("cloudR")
+                    Image("cloudL")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: screenWidth * 1.1)
@@ -107,25 +107,28 @@ struct SplashScreenView: View {
                     
                     Spacer()
                 }
+                
             }
             .onAppear {
-                withAnimation(.easeOut(duration: 2.0)) {
-                    cloudsIn = true
-                }
-                withAnimation(.easeOut(duration: 1.5)) {
-                    seaIn = true
-                }
-                withAnimation(.easeOut(duration: 2.5)) {
-                    shipIn = true
-                }
-                withAnimation(.easeIn(duration: 0.5)) {
-                    buttonIn = true
-                }
-            }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    withAnimation(.easeOut(duration: 0.2)) {
+                        cloudsIn = true
+                    }
+                    withAnimation(.easeOut(duration: 1)) {
+                        seaIn = true
+                    }
+                    withAnimation(.easeOut(duration: 2)) {
+                        shipIn = true
+                    }
+                    withAnimation(.easeIn(duration: 2)) {
+                        buttonIn = true
+                    }
+                    SoundManager.shared.playLoop(named: "LoadingScreenSound", volume: 1)
+                }}
             //}
-            .onAppear {
-                SoundManager.shared.playLoop(named: "LoadingScreenSound", volume: 1)
-            }
+          //  .onAppear {
+
+          //  }
         }
     }
 }
