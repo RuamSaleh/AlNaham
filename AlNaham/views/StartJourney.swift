@@ -250,7 +250,7 @@ struct BreathingPopup: View {
                 })
                 .padding(.bottom, 22)
             }
-        }
+        }.environment(\.layoutDirection, .leftToRight)
         .frame(width: 357, height: 354)
     }
 }

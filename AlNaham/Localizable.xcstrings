@@ -1,38 +1,30 @@
 {
   "sourceLanguage" : "ar",
   "strings" : {
-    "// نص الشاشة الأولى" : {
+    "" : {
 
     },
-    "// نص الشاشة الثالثة" : {
+    "%lld%%" : {
 
     },
-    "// نص الشاشة الثانية" : {
-
-    },
-    "// نص الشاشة الخامسة" : {
-
-    },
-    "// نص الشاشة الرابعة" : {
-
-    },
-    "أتممت ٣٦ نفساً بنجاح!\nهذا الإيقاع المنضبط حفّز العصب الحائر لديك، مما خفض استجابة جسدك للتوتر وأعاد توازن مؤشراتك الحيوية بشكل فسيولوجي." : {
+    "أتممت رحلتك بنجاح!\nهذا الإيقاع المنضبط حفّز العصب الحائر لديك، مما خفض استجابة جسدك للتوتر وأعاد توازن مؤشراتك الحيوية بشكل فسيولوجي." : {
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You completed 36 breaths successfully! This steady rhythm sparked your wandering nerve, easing your body’s stress response and restoring your vital signs’ balance naturally."
-          }
-        }
-      }
-    },
-    "أطلق صوتك لتهدأ روحك. هذه\nالرحلة صُممت لتكون صدى مشاعرك؛\nننسجُ من صوتك وصوت البحر لحناً\nيبدد شتات النفس، ويصل بك إلى مرسى الأمان." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Release your voice to calm your soul. This journey is crafted as an echo of your feelings; we weave from your voice and the sea’s song a melody that scatters the mind’s unrest and brings you to the harbor of peace."
+          "variations" : {
+            "device" : {
+              "iphone" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "You have successfully completed your journey!\nThis steady rhythm has stimulated your vagus nerve, reducing your body's stress response and physiologically restoring the balance of your vital signs."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "You have successfully completed your journey!\nThis steady rhythm has stimulated your vagus nerve, reducing your body's stress response and physiologically restoring the balance of your vital signs."
+                }
+              }
+            }
           }
         }
       }
@@ -41,9 +33,41 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
+          "variations" : {
+            "device" : {
+              "iphone" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "Release your voice to calm your soul. This journey is crafted as an echo of your feelings; we weave from your voice and the sea’s song a melody that scatters the mind’s unrest and brings you to the harbor of peace."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Release your voice to calm your soul. This journey is crafted as an echo of your feelings; we weave from your voice and the sea’s song a melody that scatters the mind’s unrest and brings you to the harbor of peace."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "إذا أردت المغادرة، يمكنك إنهاء الجلسة في أي وقت عبر زر العودة في الأعلى." : {
+      "localizations" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Release your voice to calm your soul. This journey is crafted as an echo of your feelings; we weave from your voice and the sea’s song a melody that scatters the mind’s unrest and brings you to the harbor of peace."
+            "value" : "If you want to leave, you can end the session anytime using the back button at the top.\n"
+          }
+        }
+      }
+    },
+    "اجعل حركة القارب دليلاً لأنفاسك" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Make the movement of the boat follow the rhythm of your breathing.\n"
           }
         }
       }
@@ -52,9 +76,31 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
+          "variations" : {
+            "device" : {
+              "iphone" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "Choose your vessel for the journey\n"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Choose your vessel for the journey\n"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "اضغط الشاشة لرؤية مدى تقدمك في الرحلة" : {
+      "localizations" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Choose your vessel for the journey\n"
+            "value" : "Tap the screen to see your progress in the journey.\n"
           }
         }
       }
@@ -72,9 +118,21 @@
     "خذ استراحة من ضجيج التغيير. هذه\nالرحلة صُممت لتكون مساحتك الخاصة،\nحيث تحول اضطراب المشاعر إلى أنفاس\nهادئة تصل بك إلى بر الأمان." : {
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Take a pause from the noise of change. This journey is designed to be your private space, where the turmoil of feelings turns into calm breaths that carry you to safe shores."
+          "variations" : {
+            "device" : {
+              "iphone" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "Take a pause from the noise of change. This journey is designed to be your private space, where the turmoil of feelings turns into calm breaths that carry you to safe shores."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Take a pause from the noise of change. This journey is designed to be your private space, where the turmoil of feelings turns into calm breaths that carry you to safe shores."
+                }
+              }
+            }
           }
         }
       }
@@ -86,6 +144,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Take a pause from the noise of change. This journey is designed to be your private space, where the turmoil of feelings turns into calm breaths that carry you to safe shores."
+          }
+        }
+      }
+    },
+    "خذ شهيقاً مع صعوده" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inhale as it rises."
           }
         }
       }
@@ -105,9 +173,21 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "alsakeena Ship"
+          "variations" : {
+            "device" : {
+              "iphone" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "alsakeena Ship"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "alsakeena Ship"
+                }
+              }
+            }
           }
         }
       }
@@ -115,20 +195,21 @@
     "سَفينة السكينة" : {
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "alsakeena Ship"
-          }
-        }
-      }
-    },
-    "سفينة النهمة" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "annahma Ship"
+          "variations" : {
+            "device" : {
+              "iphone" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "alsakeena Ship"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "alsakeena Ship"
+                }
+              }
+            }
           }
         }
       }
@@ -137,9 +218,21 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "annahma Ship"
+          "variations" : {
+            "device" : {
+              "iphone" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "annahma Ship"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "annahma Ship"
+                }
+              }
+            }
           }
         }
       }
@@ -157,6 +250,16 @@
     },
     "مرسى الأمان!" : {
 
+    },
+    "وزفيراً مع هدوئه" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exhale as it calms"
+          }
+        }
+      }
     }
   },
   "version" : "1.1"
