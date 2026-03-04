@@ -159,6 +159,7 @@ struct StartJourney: View {
 
 struct BreathingPopup: View {
     @Binding var isPresented: Bool
+    @State private var selectedDuration: Duration = .six
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 34, style: .continuous)
@@ -211,22 +212,52 @@ struct BreathingPopup: View {
                         .padding(.horizontal, 22)
                     Spacer().frame(height: 18)
 
-                    HStack{
-                        Image(systemName: "clock")
-                            .font(.system(size: 14, weight: .medium))
-                            .foregroundColor(.secondText.opacity(0.6))
+//                    HStack{
+//                        Image(systemName: "clock")
+//                            .font(.system(size: 14, weight: .medium))
+//                            .foregroundColor(.secondText.opacity(0.6))
+//
+//                        Text(LocalizedStringKey("رحلة مدتها ٦ دقائق"))
+//                            .font(.system(size: 15, weight: .regular))
+//                            .foregroundColor(.secondText.opacity(0.6))
+//                    }
+//                    .environment(\.layoutDirection, .rightToLeft)
+//                    .padding(.bottom, 10)
 
-                        Text(LocalizedStringKey("رحلة مدتها ٦ دقائق"))
-                            .font(.system(size: 15, weight: .regular))
-                            .foregroundColor(.secondText.opacity(0.6))
+
+                    HStack(spacing: 14) {
+                        ForEach(Duration.allCases) { duration in
+                            Button {
+                                selectedDuration = duration
+                            } label: {
+                                Text(duration.displayText)
+                                    .font(.system(size: 16, weight: .medium))
+                                    .foregroundColor(
+                                        selectedDuration == duration
+                                        ? .primaryText
+                                        : .primaryText
+                                    )
+                                    .frame(width: 52, height: 40)
+                                    .background(
+                                        Circle().fill(
+                                            selectedDuration == duration
+                                            ? Color.darkGreen.opacity(0.5)
+                                            : Color.background
+                                        )
+                                    )
+                            }
+                        }
                     }
-                    .environment(\.layoutDirection, .rightToLeft)
                     .padding(.bottom, 10)
-
-
+                    
+                    
+                    
+                    
+                    
+                    
                     // button -> navigates to breathing excrcis
                     NavigationLink {
-                        BreathingScreenView()
+                        BreathingScreenView(duration: selectedDuration)
                        // Text("breathing excercis")
                     } label: {
                         Text(LocalizedStringKey("لنبحر"))

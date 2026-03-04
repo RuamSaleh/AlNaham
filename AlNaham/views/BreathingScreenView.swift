@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BreathingScreenView: View {
+    let duration: Duration
+    @StateObject private var viewModel: JourenyPrograss
     @State var wiggleDark = false
     @State var driftDark: CGFloat = -670
     @State var wiggleLight = false
@@ -20,9 +22,18 @@ struct BreathingScreenView: View {
     @State var moveSea = false
     @State var showFinishedPopup = false
     
+    
+    init(duration: Duration) {
+        self.duration = duration
+        _viewModel = StateObject(
+            wrappedValue: JourenyPrograss(duration: duration)
+        )
+    }
+    
     var body: some View {
         NavigationStack {
             ZStack {
+//                Text("Duration: \(duration.minutes) minutes")
                 Color(.background).ignoresSafeArea()
                 
                 ZStack {
@@ -197,5 +208,6 @@ struct FinishedBreathingPopup: View {
 
 
 #Preview {
-    BreathingScreenView()
+    BreathingScreenView(duration: .six)
 }
+
