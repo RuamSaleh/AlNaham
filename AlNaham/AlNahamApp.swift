@@ -11,10 +11,9 @@ import SwiftUI
 struct AlNahamApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStack{
+            NavigationStack {
                 SplashScreenView()
             }
-            
         }
     }
 }
