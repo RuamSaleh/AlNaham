@@ -14,10 +14,6 @@ struct SplashScreenView: View {
     @State private var shipIn = false
     @State private var buttonIn = false
     
-    //  private let cloudWidth: CGFloat = 426
-    //  private let seaSize = CGSize(width: 852, height: 393)
-    //  private let topPadding: CGFloat = 59
-    
     var body: some View {
         GeometryReader { geo in
             let screenWidth = geo.size.width
@@ -26,27 +22,20 @@ struct SplashScreenView: View {
                 Color.background.ignoresSafeArea()
                 // Clouds
                 ZStack {
-                    Image("cloudR")
+                    Image("cloudL")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: screenWidth * 1.1)
                         .offset(x: cloudsIn ?/* -12 : 400)*/-screenWidth * 0.0 : screenWidth)
                     
-                    Image("cloudL")
+                    Image("cloudR")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: screenWidth * 1.1)
                         .offset(x: cloudsIn ? screenWidth * 0.0 : -screenWidth)
                     
-                    //                    .frame(width: cloudWidth)
-                    //                    .offset(x: cloudsIn ? 12 : -400)
                 }
                 .padding(.top, screenHeight * 0.0)
-                //                .onAppear {
-                //                    withAnimation(.easeOut(duration: 2)) {
-                //                        cloudsIn = true
-                //                    }
-                //                }
                 // Sea
                 Image("sea")
                     .resizable()
@@ -55,14 +44,6 @@ struct SplashScreenView: View {
                     )
                     .offset(y: seaIn ? screenHeight * 0.2 : screenHeight)
                 
-                //                    .aspectRatio(contentMode: .fill)
-                //                    .frame(width: seaSize.width, height: seaSize.height)
-                //                    .offset(y: seaIn ? 226 : 400)
-                //                    .onAppear {
-                //                        withAnimation(.easeOut(duration: 0.5)) {
-                //                            seaIn = true
-                //                        }
-                //                    }
                 // Ship
                 Image("ship")
                     .resizable()
@@ -70,14 +51,6 @@ struct SplashScreenView: View {
                     .frame(width: screenWidth * 1)
                     .offset(x: shipIn ? -screenWidth * 0.3 : -screenWidth, y: screenHeight * 0.15)
                 
-                //                .aspectRatio(contentMode: .fill)
-                //                .frame(width: cloudWidth)
-                //                .offset(x: shipIn ? -120 : -900, y: 150)
-                //                    .onAppear {
-                //                        withAnimation(.easeOut(duration: 2)) {
-                //                            shipIn = true
-                //                        }
-                //                    }}
                 // Button
                 VStack {
                     Spacer()
@@ -91,8 +64,6 @@ struct SplashScreenView: View {
                             .background(Color.darkGreen)
                             .cornerRadius(24)
                     }
-                    //                    .offset(y: buttonIn ? -screenHeight * 0.2 : 20)
-                    
                     .simultaneousGesture(
                         TapGesture().onEnded {
                             SoundManager.shared.crossfade(
@@ -111,10 +82,10 @@ struct SplashScreenView: View {
             }
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    withAnimation(.easeOut(duration: 0.2)) {
+                    withAnimation(.easeOut(duration: 1)) {
                         cloudsIn = true
                     }
-                    withAnimation(.easeOut(duration: 1)) {
+                    withAnimation(.easeOut(duration: 1.5)) {
                         seaIn = true
                     }
                     withAnimation(.easeOut(duration: 2)) {
@@ -125,13 +96,12 @@ struct SplashScreenView: View {
                     }
                     SoundManager.shared.playLoop(named: "LoadingScreenSound", volume: 1)
                 }}
-            //}
-          //  .onAppear {
-
-          //  }
-        }
+            
+        }.environment(\.layoutDirection, .leftToRight)
+        
     }
 }
+
 #Preview {
     SplashScreenView()
 }
