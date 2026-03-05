@@ -148,7 +148,7 @@ struct StartJourney: View {
                     .offset(x: -screenWidth * 0.38,
                             y: screenHeight * -0.12)
 
-                    Image("ship")
+                    Image("Ship3")
                         .resizable()
                         .scaledToFit()
                         .frame(width: screenWidth * 0.9)
